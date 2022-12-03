@@ -47,6 +47,9 @@ def getAadharDict(OcrList):
     genderFlag = False
     nameFlag = False
 
+    # testing
+    # print(OcrList)
+
     # dob detector
     eleCounter = 0
     for ele in OcrList:
@@ -134,16 +137,18 @@ def getAadharDict(OcrList):
     else:
         Dict["gender"] = "NA"
 
-    return Dict
-
     # testing
     # print(Dict)
-    #
+    
     # print(dob)
     # print(aadharNumber)
     # print(gender)
     # print(name)
     # print(OcrList)
+
+    return Dict
+
+    
 
 # if __name__ == "__main__":
     # print (OCR.getOCRList("/Users/aditya_gitte/Projects/SIH/Antons-ML-Model/SampleImages/Aadhar/pranav.jpeg "))
