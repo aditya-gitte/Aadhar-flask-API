@@ -10,7 +10,7 @@ def getAadharDictionary(path,path2):
     Dict=AE.getAadharDict(OCRList)
 
     #clearing the dump folder after the work is done
-    dir = 'Dump'
+    dir = 'Static/Dump'
     for f in os.listdir(dir):
         os.remove(os.path.join(dir, f))
 
