@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -50,6 +50,10 @@ def processAadhar():
         adhdict=getAadharDictionary(imgpath,dumppath)
         adhjson = json.dumps(adhdict)
         
+        #Clearing the files after the task is complete
+        os.remove(imgpath)
+        os.remove(dumppath)
+
         return adhjson
 
     else:

@@ -9,11 +9,6 @@ def getAadharDictionary(path,path2):
     OCRList=OCR.getOCRList(path2)
     Dict=AE.getAadharDict(OCRList)
 
-    #clearing the dump folder after the work is done
-    dir = 'Static/Dump'
-    for f in os.listdir(dir):
-        os.remove(os.path.join(dir, f))
-
     return Dict
 
 # use for testing the final code
